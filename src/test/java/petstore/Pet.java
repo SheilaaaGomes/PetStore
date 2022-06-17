@@ -3,6 +3,7 @@ package petstore;
 
 // 2 - Bibliotecas
 
+import io.restassured.response.ValidatableResponse;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
 // 3 - Classe
 public class Pet {
@@ -30,7 +32,7 @@ public class Pet {
         // Dado - Quando - Então
         // Given - When - Then
 
-        given() // Dado
+       given() // Script Rest
                 .contentType("application/json") // comum em API REST - antigas era "text/xml"
                 .log().all()
                 .body(jsonBody)
@@ -39,7 +41,12 @@ public class Pet {
                 .then()  // Então
                 .log().all()
                 .statusCode(200)
-        ;
+                .body("name", is("Sheila"))
+               .body("status", is("available"))
+
+       ;
+
+
 
 
     }
