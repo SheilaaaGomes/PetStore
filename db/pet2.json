@@ -1,0 +1,18 @@
+{
+  "id": 77910321,
+  "category": {
+    "id": 1,
+    "name": "dog"
+  },
+  "name": "Sheila",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 2022,
+      "name": "sta"
+    }
+  ],
+  "status": "sold"
+}
